@@ -231,9 +231,9 @@ xkb_layout "gb,tr"
 xkb_options grp:alt_shift_toggle
 }
 
-# Audio startup for pipewire or pulse. Uncomment the one you use.
+# Audio startup for pipewire or pulse. Comment away the one you don't use.
 exec "pipewire &"
-#exec "pulseaudio"
+exec "pulseaudio"
 
 # Volume
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
