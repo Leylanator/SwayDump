@@ -23,8 +23,9 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/wallpapers/user/688202.png fill
-#output * bg /home/leyla/Pictures/McRideWave.jpg stretch
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# I have used the default wallpaper here. This was made before Figuring out how to put together an install script.
+
 #
 # Example configuration:
 #
@@ -47,7 +48,7 @@ exec swayidle -w \
 
 ### Input configuration
 #
-# Example configuration:
+# My laptop's configuration:
 #
    input  "1739:52544:SYNA7DB5:01_06CB:CD40_Touchpad" {
 	dwt enabled
@@ -57,14 +58,9 @@ exec swayidle -w \
 	accel_profile "adaptive"
 	pointer_accel -0.10
    }
-#
-# Here is the config for the specific SteelSeries Mouse I have
-#
-   input  "4152:6180:SteelSeries_SteelSeries_Rival_3" {
-	natural_scroll enabled
-	accel_profile "flat"
-	pointer_accel -0.15
-   }
+   
+# Replace the quoted device after input with your one(s) and customise settings to your liking.
+
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -235,8 +231,9 @@ xkb_layout "gb,tr"
 xkb_options grp:alt_shift_toggle
 }
 
-# Audio startup for pipewire
+# Audio startup for pipewire or pulse. Uncomment the one you use.
 exec "pipewire &"
+#exec "pulseaudio"
 
 # Volume
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
@@ -263,5 +260,5 @@ gaps outer 2
 # Titlebar removal
 default_border pixel 2
 
-# Polkit (asks for root password for certain apps)
-exec_always /usr/lib/polkit-gnome-authentication-agent-1
+# Polkit (asks for root password for certain apps. This I had to do to for Minecraft auto login of all things.)
+# exec_always /usr/lib/polkit-gnome-authentication-agent-1
