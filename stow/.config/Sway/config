@@ -258,6 +258,13 @@ font pango:LiberationMono Medium 10
 gaps inner 4
 gaps outer 2
 
+# Borders
+client.background	n/a 928374 n/a n/a n/a
+client.focused 		fe8019 282828 ebddb2 458588 fe8019
+client.focused_inactive d79921 282828 b8bb26 458588 d79921
+
+# do more later.
+
 # Titlebar removal
 default_border pixel 2
 
